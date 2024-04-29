@@ -56,10 +56,11 @@ return new class extends Migration
         Schema::create('ab_article_has_category', function (Blueprint $table) {
             $table->id()
                 ->comment('Primaschlüssel');
-            $table->bigInteger('ab_category_id')->unsigned()->nullable(false)->unique(true)
+            $table->bigInteger('ab_category_id')->unsigned()->nullable(false)->unique(false)
                 ->comment('Referenz auf eine Artikelkategorie');
-            $table->bigInteger('ab_article_id')->unsigned()->nullable(false)->unique(true)
+            $table->bigInteger('ab_article_id')->unsigned()->nullable(false)->unique(false)
                 ->comment('Referenz auf einen Artikel');
+            $table->unique(['ab_category_id', 'ab_article_id']);
         });
     }
 

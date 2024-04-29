@@ -31,7 +31,7 @@ class DevelopmentData extends Seeder
             DB::table('ab_article')->insert([
                 'id' => $row[0],
                 'ab_name' => $row[1],
-                'ab_price' => (int)($row[2]*100),
+                'ab_price' => (int)(str_replace('.', '', $row[2])) * 100,
                 'ab_description' => $row[3],
                 'ab_creator_id' => $row[4],
                 'ab_createdate' => $row[5]
