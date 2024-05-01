@@ -8,7 +8,8 @@
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
+        <link href="https://fonts.bunny.net/css?family=figtree:7400,600&display=swap" rel="stylesheet" />
+        <link href="{{asset('/style.css')}}" rel="stylesheet"  />
 
         <!-- Styles -->
         <style>
@@ -27,6 +28,6 @@
 
         <script src="{{ asset('/js/data.js') }}"></script>
         <script src="{{ asset('/js/create-nav.js') }}"></script>
-
+        <script src="{{ asset('/js/cookiecheck.js') }}"></script>
     </body>
 </html>

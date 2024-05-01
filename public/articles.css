@@ -1,0 +1,28 @@
+#warenkorb{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    width: 40vw;
+    height: 40vh;
+    background-color: #cbd5e0;
+    border-radius: 8px;
+    padding: 8px 16px;
+    visibility: hidden;
+}
+#ul-shopping{
+    display: flex;
+    flex-direction: column;
+}
+.li-style{
+    display: flex;
+    column-gap: 8px;
+}
+.btn-rm{
+    width: 20px;
+    height: 8px;
+    align-self: center;
+    font-weight: bold;
+    text-align: center;
+    background-color: #570103;
+
+}

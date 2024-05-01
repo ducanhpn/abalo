@@ -1,3 +1,4 @@
+'use strict'
 const nav = document.getElementById("nav");
 const ul = document.createElement("ul");
 

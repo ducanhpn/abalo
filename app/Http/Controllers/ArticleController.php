@@ -23,4 +23,20 @@ class ArticleController extends Controller
 
         return view('articlesTable',['result'=>$result]);
     }
+
+    //validation
+    public function store(Request $request){
+        //clean data
+        $name = $request->post("name");
+        $name = trim($name);
+        $price  = (int)$request->post("price");
+
+        //validate data
+        if(empty($name) || $price <=0 || strcmp($name,"böse") == 0){
+            return back()->with(['warning' => true]);
+        }
+        else{
+            return $this->index($request);
+        }
+    }
 }

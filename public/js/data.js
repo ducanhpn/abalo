@@ -1,3 +1,4 @@
+'use strict'
 var data = {
     'produkte': [
         { name: 'Ritterburg', preis: 59.99, kategorie: 1, anzahl: 3 },
