@@ -9,7 +9,7 @@
 </head>
 <body>
 
-
+    <h2 id="status"></h2>
     <script>
         @if (session('warning'))
             alert("store failed");
@@ -110,6 +110,24 @@
         div.appendChild(input.description);
         document.body.appendChild(button);
 
+        /********CREATE AJAX FUNCTION**********/
+        function submitThroughAjax(formObject){
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "/articles");
+            let formData = new FormData(formObject);
+            xhr.onreadystatechange = function() {
+                if(xhr.readyState === 4){
+                    if(xhr.status === 200){
+                        document.getElementById("status").innerText = JSON.parse(xhr.response)['success'];
+                    }
+                    else{
+                        document.getElementById("status").innerText = JSON.parse(xhr.response)['error'];
+                    }
+                }
+            }
+            xhr.send(formData);
+        }
+
         //add event listener for button
         button.addEventListener('click', (e)=>{
             e.preventDefault();
@@ -124,7 +142,8 @@
                 alert("price must be more than 0");
                 return;
             }
-            document.getElementById("form").submit();
+            //document.getElementById("form").submit();
+            submitThroughAjax(form);
         })
 
         //add to body

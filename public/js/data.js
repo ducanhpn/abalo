@@ -21,6 +21,7 @@ const getMaxPreis = (data) => {
     }
     return max;
 }
+console.log(getMaxPreis(data));
 
 const getMinPreis = (data) => {
     let min = data['produkte'][0].preis;
