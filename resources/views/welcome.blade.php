@@ -18,6 +18,8 @@
 
     </head>
     <body class="font-sans antialiased dark:bg-black dark:text-white/50">
+        <script src="{{ asset('/js/create-nav.js') }}"></script>
+
         <nav id="nav"></nav>
         <h1>Hello</h1>
         <label for="function-name">Bitte geben Sie den Funktion-Namen ein: </label>
@@ -27,7 +29,6 @@
         <p id="result"></p>
 
         <script src="{{ asset('/js/data.js') }}"></script>
-        <script src="{{ asset('/js/create-nav.js') }}"></script>
         <script src="{{ asset('/js/cookiecheck.js') }}"></script>
     </body>
 </html>

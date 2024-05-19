@@ -1,44 +1,48 @@
 'use strict'
-const nav = document.getElementById("nav");
-const ul = document.createElement("ul");
+class NaviMenu {
+    constructor(arr) {
+        this.nav = document.createElement('nav')
+        this.ul = document.createElement('ul');
+        this.nav.appendChild(this.ul);
+        for(let i=0; i<arr.length; i++){
+            this[arr[i]] = document.createElement('li');
+            this[arr[i]].textContent = arr[i];
+            this.ul.appendChild(this[arr[i]]);
+        }
+    }
 
-nav.appendChild(ul);
+    onClick(item, callback){
+        this[item].addEventListener('click', callback);
+    }
+    onMouseEnter(item, callback) {
+        this[item].addEventListener('mouseenter', callback);
+    }
+    onMouseOut(item, callback) {
+        this[item].addEventListener('mouseout', callback);
+    }
+    append(item, subNMenu){
+        this[item].appendChild(subNMenu.nav);
+    }
+    addToDocument(){
+        document.body.appendChild(this.nav);
+    }
+    getNav() {
+        return this.nav;
+    }
+}
 
-const li = [];
+
 const menuItem = ['Home', 'Kategorie', 'Verkaufen', 'Unternehmen'];
-
-//add <li> to <ul>
-for(let i=0; i<4; i++){
-    li.push(document.createElement("li"));
-    li[i].textContent = menuItem[i];
-    li[i].classList.add(menuItem[i]);
-    ul.appendChild(li[i]);
-}
-
+const firstNav = new NaviMenu(menuItem) // Hauptmenu erstellen
 const subItem = ['Philosophie', 'Karriere'];
-const subLiItem = [];
-const subUl = document.createElement(("ul"))
-subUl.hidden = true;
-
-li[li.length - 1].appendChild(subUl); // add <ul> to <li>Unternehmen</li>
-
-//add sub <li> to sub <ul>
-for(let i=0; i < subItem.length; i++){
-    subLiItem.push(document.createElement('li'));
-    subLiItem[i].textContent = subItem[i]
-    subLiItem[i].classList.add(subItem[i]);
-    subUl.appendChild(subLiItem[i]);
-}
-
-//handle routing
-li[1].addEventListener('click', function(){
-    window.location.href = '/article';
+const secondNav = new NaviMenu(subItem); // Submenu erstellen
+firstNav.append('Unternehmen', secondNav);
+firstNav.onMouseEnter('Unternehmen', function(){
+    secondNav.getNav().hidden = false
 })
 
-// config sub list
-li[li.length-1].addEventListener('mouseenter', function(){
-    subUl.hidden= false;
+firstNav.onMouseOut('Unternehmen', function() {
+    secondNav.getNav().hidden = true;
 })
-subUl.addEventListener('mouseout', function(){
-    subUl.hidden= true;
-})
+firstNav.addToDocument();
+

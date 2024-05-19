@@ -1,0 +1,31 @@
+5)
+
+Set.prototype.intersection, ... sind von Javascript Core  und v8 unterstützt. SpiderMonkey (Firefox), Chakra (Edge) nicht.
+static block ist von allen modernen Browsern unterstütz.
+Array.prototype.flat ist von allen modernen Browsern unterstütz.
+Array.prototype.findLast ist von allen modernen Browsern ( ab 2022 ) unterstütz.
+Array.prototype.group ( gibt gar keine )
+temporal ist noch entwickelt.
+
+Array und static kann man verwenden, andere Features nicht, weil die noch nicht so weit unterstütz sind.
+
+Quelle: MDN Web Docs
+https://tc39.es/proposal-temporal/docs/index.html
+
+6)
+
+Google Abusive Experience Report API: Gibt eine List der Webseiten zurück, die nicht die gewünschen Infomationen anzeigen. sind zu den Benutzern verleitet.
+
+Rest-Prinzipien: 1. Client-Server, 2. Zustandlos, 4. Einheitliche Schnittstelle ( keine Information über die Zwischenspeicher )
+
+RMM Level: 2 (keine Verlinkung als Verhalten zwischen Resourcen)
+
+Versionierung ist implementiert und is gerade v1.
+
+X API: um die Daten aus Twitter abzurufen, zu analysieren, und mit Twitter zu kommuniezieren. api v2 ( Vesionierung )
+
+Rest-Prinzipien: 1. Client-server, 2. Zustandlos, 4. Einheitliche Schnittstelle, 5. Mehrschichtige Systeme ( Authentifizierung, Tweet,...)
+
+Level 2 ( Gibt keine Verlinkung zwischen REsourcen  )
+
+
