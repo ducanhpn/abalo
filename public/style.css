@@ -18,3 +18,11 @@
     justify-content: flex-end;
     row-gap: 2px;
 }
+
+.interactive{
+    position: relative
+}
+.container-btn{
+    position: absolute;
+    top: 10px;
+}

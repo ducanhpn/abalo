@@ -21,8 +21,13 @@ class ArticleController extends Controller
                 ->where('ab_name','ilike','%' . $request->search . '%')
                 ->get();
         }
+        $articles = DB::table('ab_article')
+            ->select('ab_article.*')
+            ->join('ab_shoppingcart_item', 'ab_article.id', '=', 'ab_shoppingcart_item.ab_article_id')
+            ->where('ab_shoppingcart_item.ab_shoppingcart_id',1)
+            ->get();
 
-        return view('articlesTable',['result'=>$result]);
+        return view('articlesTable',['shoppingCart' => $articles,'result'=>$result]);
     }
 
     //validation
@@ -45,6 +50,25 @@ class ArticleController extends Controller
             //return $this->index($request); // call index function
             return response()->json(['success' => 'Erfolgreich'], 200);
         }
+
+    }
+
+    public function search_api(Request $request){
+        if(empty($request->search)){
+            $result = DB::table('ab_article')
+                ->select('*')
+                ->get();
+        }
+        else{
+            $result = DB::table('ab_article')
+                ->select('*')
+                ->where('ab_name','ilike','%' . $request->search . '%')
+                ->get();
+        }
+        return json_encode($result);
+    }
+
+    public function store_api(Request $request){
 
     }
 }
