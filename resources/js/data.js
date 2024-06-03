@@ -1,4 +1,5 @@
 'use strict'
+import {add, largerEq, smallerEq} from 'mathjs'
 var data = {
     'produkte': [
         { name: 'Ritterburg', preis: 59.99, kategorie: 1, anzahl: 3 },
@@ -17,7 +18,7 @@ var data = {
 const getMaxPreis = (data) => {
     let max = data['produkte'][0].preis;
     for( const obj of data['produkte']){
-        if(obj.preis >= max) max = obj.preis;
+        if(largerEq(obj.preis , max)) max = obj.preis;
     }
     return max;
 }
@@ -26,20 +27,20 @@ console.log(getMaxPreis(data));
 const getMinPreis = (data) => {
     let min = data['produkte'][0].preis;
     for( const obj of data['produkte']){
-        if(obj.preis <= min) min = obj.preis;
+        if(smallerEq(obj.preis , min)) min = obj.preis;
     }
     return min;
 }
 
 const getPreisSum = (data) => {
 
-    return data['produkte'].map(element => element.preis).reduce((accumulaltor, currentValue) => accumulaltor + currentValue);
+    return data['produkte'].map(element => element.preis).reduce((accumulaltor, currentValue) => add(accumulaltor, currentValue));
 }
 
 const getGesamtWert = (data) => {
 
     return data['produkte'].map(element => element.preis * element.anzahl)
-        .reduce((accumulaltor, currentValue) => accumulaltor + currentValue);
+        .reduce((accumulator, currentValue) => accumulator+ currentValue);
 }
 
 const getAnzahlProdukteOfKategorie = (data, kategorieName = 'Spielzeug') => {
@@ -88,5 +89,6 @@ const showResult = () => {
     }
 }
 
+window.showResult = showResult;
 /*+++++++++++CREATE NAV LIST+++++++++++++*/
 
