@@ -60,6 +60,7 @@ class ApiController extends Controller
         $result = DB::table('ab_article')
             ->select('*')
             ->where('ab_name','ilike','%' . $name. '%')
+            ->limit(5)
             ->get();
         return response()->json($result);
     }
