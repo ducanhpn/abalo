@@ -7,6 +7,7 @@ let renderKey = ref(0)
 
 async function getArticles(searchTerm){
     articles = await fetch("http://localhost:8000/api/articles/" + searchTerm).then(r => r.json())
+    console.log(articles);
 }
 
 watch(searchTerm, (newSearchTerm) => {

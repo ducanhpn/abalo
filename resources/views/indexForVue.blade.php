@@ -8,7 +8,12 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <div id="app"></div>
+    <div id="app">
+
+    </div>
+    <script>
+        window.srcArr = @json($srcArr)
+    </script>
     @vite('resources/js/app.js')
 </body>
 </html>

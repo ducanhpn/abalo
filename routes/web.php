@@ -9,10 +9,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 */
-Route::get('/', function() {
-    return view('indexForVue');
-});
+Route::get('/',  [TestController::class, 'index']);
+Route::any('/{any}', [TestController::class, 'index']);
 
+/*
 Route::get('/newarticle', function() {
     return view('newArticle');
 });
@@ -23,3 +23,4 @@ Route::get('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->n
 Route::get('/isloggedin', [App\Http\Controllers\AuthController::class, 'isloggedin'])->name('haslogin');
 Route::get('/articles', [ArticleController::class, 'index']);
 Route::post('/articles', [ArticleController::class, 'store'] );
+*/
