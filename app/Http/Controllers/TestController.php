@@ -13,11 +13,11 @@ class TestController extends Controller{
         $srcArr = [];
 
         for($i = 0; $i < count($result); $i++){
-            if(file_exists(public_path("storage/image/") . $i . ".jpg")){
-                $srcArr[$i] = "/storage/image/" . $i . ".jpg";
+            if(file_exists(public_path("storage/image/") . $i +1 . ".jpg")){
+                $srcArr[$i] = "/storage/image/" . $i + 1 . ".jpg";
             }
-            else if(file_exists(public_path("storage/image/") . $i . ".png")){
-                $srcArr[$i] = "/storage/image/" . $i . ".png";
+            else if(file_exists(public_path("storage/image/") . $i +1 . ".png")){
+                $srcArr[$i] = "/storage/image/" . $i + 1 . ".png";
             }
         }
         return view("indexForVue", ['srcArr' => $srcArr]);

@@ -34,7 +34,7 @@ class DevelopmentData extends Seeder
                 'ab_price' => (int)(str_replace('.', '', $row[2])) * 100,
                 'ab_description' => $row[3],
                 'ab_creator_id' => $row[4],
-                'ab_createdate' => $row[5]
+                'ab_createdate' => date("Y-m-d H:i:s",strtotime($row[5]))
             ]);
         }
 

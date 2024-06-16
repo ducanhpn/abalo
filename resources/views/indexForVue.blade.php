@@ -12,7 +12,8 @@
 
     </div>
     <script>
-        window.srcArr = @json($srcArr)
+        window.srcArr = @json($srcArr);
+        console.log(window.srcArr);
     </script>
     @vite('resources/js/app.js')
 </body>

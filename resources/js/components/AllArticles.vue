@@ -5,7 +5,7 @@ import {onBeforeMount, onMounted, reactive, ref} from "vue";
     import {column} from "mathjs";
 
     let articles = ref([])
-    const imgExtension = [".jpg",".png",".jpeg"];
+
     let arr = window.srcArr;
     console.log(arr);
 
@@ -32,7 +32,7 @@ import {onBeforeMount, onMounted, reactive, ref} from "vue";
                         :ab_name="article['ab_name']"
                         :ab_price="article.ab_price"
                         :ab_description="article.ab_description"
-                        :imgSrc="arr[article.id]"
+                        :imgSrc="arr[article.id - 1]"
                         :key="article.id" />
     </div>
 

@@ -84,7 +84,7 @@ return [
             'url' => env('DB_URL'),
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'abalosudo '),
+            'database' => env('DB_DATABASE', 'abalo'),
             'username' => env('DB_USERNAME', 'dev'),
             'password' => env('DB_PASSWORD', 'root'),
             'charset' => env('DB_CHARSET', 'utf8'),
