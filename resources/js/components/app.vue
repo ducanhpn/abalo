@@ -1,11 +1,12 @@
 <template>
     <nav>
         <RouterLink class="nav-btn" to="/home">Home</RouterLink>
-        <RouterLink class="nav-btn" to="/articles-vue">Articles</RouterLink>
+        <RouterLink class="nav-btn" to="/articles-vue">Search articles</RouterLink>
         <RouterLink class="nav-btn" to="/new-article-vue">Add new article</RouterLink>
         <RouterLink class="nav-btn" to="/all-articles-vue">List all articles</RouterLink>
     </nav>
     <main>
+        <h1>Abalo</h1>
         <RouterView />
     </main>
 
