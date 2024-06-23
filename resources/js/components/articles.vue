@@ -21,7 +21,7 @@ watch(searchTerm, (newSearchTerm) => {
 </script>
 
 <template>
-    <h1> {{ searchTerm }} </h1>
+    
     <label for="search-bar">Search articles</label>
     <input type="text" id="search-bar" v-model="searchTerm"/>
     <div :key="renderKey" v-if="searchTerm.length >=3" >
