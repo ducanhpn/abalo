@@ -17,7 +17,8 @@
 
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
+@import "../css/app.scss";
 nav{
     display: flex;
     justify-content: center;
@@ -31,7 +32,14 @@ nav{
     margin: 0 8px;
     font-size: 1.5em;
 }
-@include define-button(".nav-btn");
+
+.nav-btn:link, .nav-btn:visited{
+    @include btn-link();
+}
+
+.nav-btn:hover{
+    @include btn-hover();
+}
 
 .main--style{
     height: auto;

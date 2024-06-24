@@ -7,15 +7,14 @@ body{
     background: $background-color;
 }
 
-@mixin define-button($class-name){
-    .#{$class-name}:link, .#{$class-name}:visited{
-        text-decoration: none;
-        color: black;
-    }
-
-    .#{$class-name}:hover{
-        font-weight: bold;
-        color: rgb(7, 25, 82);
-    }
+@mixin btn-link(){
+    text-decoration: none;
+    color: black;
 }
+
+@mixin btn-hover(){
+    font-weight: bold;
+    color: rgb(7, 25, 82);
+}
+
 

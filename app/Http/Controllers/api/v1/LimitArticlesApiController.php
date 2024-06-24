@@ -32,8 +32,8 @@ class LimitArticlesApiController extends Controller
         //
         $result = DB::table('ab_article')
             ->select('*')
-            ->limit(20)
-            ->offset($count * 20)
+            ->limit(5)
+            ->offset($count * 5)
             ->get();
 
         return response()->json($result);

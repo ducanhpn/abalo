@@ -3,7 +3,7 @@ import { onMounted, ref} from "vue";
 import ArticleElement from "./ArticleElement.vue";
 
     let amount = document.getElementById('app').dataset.count;
-    let offset = parseInt(parseInt(amount) / 20);
+    let offset = parseInt(parseInt(amount) / 5);
     console.log(offset)
     let articles = ref([])
     let arr = window.srcArr;
@@ -49,7 +49,7 @@ function handleClick(event, i){
 
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 
 .container{
     display:grid;
