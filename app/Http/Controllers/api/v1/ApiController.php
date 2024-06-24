@@ -16,7 +16,7 @@ class ApiController extends Controller
         $result = DB::table('ab_article')
                 ->select('*')
                 ->get();
-        
+
         return response()->json($result);
     }
 
@@ -61,7 +61,7 @@ class ApiController extends Controller
             ->limit(5)
             ->get();
         }
-        
+
         return response()->json($result);
     }
 

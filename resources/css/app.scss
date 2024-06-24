@@ -1,0 +1,21 @@
+$background-color: #EBF4F6;
+html,body{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: $background-color;
+}
+
+@mixin define-button($class-name){
+    .#{$class-name}:link, .#{$class-name}:visited{
+        text-decoration: none;
+        color: black;
+    }
+
+    .#{$class-name}:hover{
+        font-weight: bold;
+        color: rgb(7, 25, 82);
+    }
+}
+

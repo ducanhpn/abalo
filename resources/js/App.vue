@@ -31,15 +31,7 @@ nav{
     margin: 0 8px;
     font-size: 1.5em;
 }
-.nav-btn:link, .nav-btn:visited{
-    text-decoration: none;
-    color: black;
-}
-
-.nav-btn:hover{
-    font-weight: bold;
-    color: rgb(7, 25, 82);
-}
+@include define-button(".nav-btn");
 
 .main--style{
     height: auto;
