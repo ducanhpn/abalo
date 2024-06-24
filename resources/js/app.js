@@ -1,8 +1,19 @@
 import './bootstrap';
 import {createApp} from 'vue';
+import {createPinia} from 'pinia'
 
-import app from './components/app.vue'
+import App from './App.vue'
 import router from './router/index.js'
 
 
-createApp(app).use(router).mount('#app');
+const amount = document.getElementById('app').dataset.count
+console.log(amount);
+const pinia = createPinia();
+const app = createApp(App,{count: amount});
+
+
+
+app
+    .use(pinia)
+    .use(router)
+    .mount('#app', );

@@ -8,13 +8,13 @@
     @vite('resources/css/app.css')
 </head>
 <body>
-    <div id="app">
-
+@vite('resources/js/app.js')
+    <div id="app" data-count="{{$amountArticle}}">
     </div>
     <script>
         window.srcArr = @json($srcArr);
         console.log(window.srcArr);
     </script>
-    @vite('resources/js/app.js')
+
 </body>
 </html>

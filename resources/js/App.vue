@@ -1,14 +1,19 @@
-<template>
+<script setup>
+    defineProps(['count'])
+</script>
+<template class="template--style">
     <nav>
         <RouterLink class="nav-btn" to="/home">Home</RouterLink>
         <RouterLink class="nav-btn" to="/articles-vue">Search articles</RouterLink>
         <RouterLink class="nav-btn" to="/new-article-vue">Add new article</RouterLink>
         <RouterLink class="nav-btn" to="/all-articles-vue">List all articles</RouterLink>
     </nav>
-    <main>
-        <h1>Abalo</h1>
+    <main class="main--style">
         <RouterView />
     </main>
+    <footer>
+        <RouterLink class="nav-btn" to="/impressum">impressum</RouterLink>
+    </footer>
 
 </template>
 
@@ -16,6 +21,10 @@
 nav{
     display: flex;
     justify-content: center;
+    padding-top: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(7, 25, 82, 0.6) ;
+
 }
 
 .nav-btn{
@@ -29,6 +38,17 @@ nav{
 
 .nav-btn:hover{
     font-weight: bold;
-    color: red;
+    color: rgb(7, 25, 82);
+}
+
+.main--style{
+    height: auto;
+    min-height: 100vh;
+}
+footer  {
+    width: 80vw;
+    margin: 2rem auto 0 auto;
+    display: flex;
+    justify-content: center;
 }
 </style>

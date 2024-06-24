@@ -12,6 +12,8 @@ class TestController extends Controller{
 
         $srcArr = [];
 
+        $count = DB::table('ab_article')->count();
+
         for($i = 0; $i < count($result); $i++){
             if(file_exists(public_path("storage/image/") . $i +1 . ".jpg")){
                 $srcArr[$i] = "/storage/image/" . $i + 1 . ".jpg";
@@ -20,6 +22,6 @@ class TestController extends Controller{
                 $srcArr[$i] = "/storage/image/" . $i + 1 . ".png";
             }
         }
-        return view("indexForVue", ['srcArr' => $srcArr]);
+        return view("indexForVue", ['srcArr' => $srcArr, 'amountArticle' => $count]);
     }
 }

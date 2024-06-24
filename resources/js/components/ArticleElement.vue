@@ -1,12 +1,12 @@
 <script setup>
 
-    const props = defineProps(['ab_name', 'ab_price', 'ab_description', 'imgSrc'])
+    const props = defineProps(['id','ab_name', 'ab_price', 'ab_description', 'imgSrc'])
 
 
 </script>
 
 <template>
-
+    <div>{{props.id}}</div>
     <div>{{props.ab_name}}</div>
     <div>{{props.ab_price}}</div>
     <div>{{props.ab_description}}</div>
@@ -15,12 +15,12 @@
 
 <style scoped>
 div{
-    padding: 2px;
     text-align: center;
     margin: 4px auto;
+    height: 4rem;
 }
 img {
-    width: 200px;
-    height: 130px;
+    width: 12rem;
+    height: 6rem;
 }
 </style>
