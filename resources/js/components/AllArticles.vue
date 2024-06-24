@@ -13,6 +13,8 @@ import ArticleElement from "./ArticleElement.vue";
         fetch("http://localhost:8000/api/limit-articles/" + 0).then(response => response.json()).then(result => { // load first site when mounted
             articles.value = result // need value to work
         })
+
+        fetch("http://localhost:8000/api/get-status").then(r => r.json()).catch(er => console.log(er));
     })
 
 function handleClick(event, i){
