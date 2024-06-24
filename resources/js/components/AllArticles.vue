@@ -10,7 +10,7 @@ import ArticleElement from "./ArticleElement.vue";
     console.log(arr);
 
     onMounted(()=>{
-        fetch("http://localhost:8000/api/limit-articles/" + offset).then(response => response.json()).then(result => {
+        fetch("http://localhost:8000/api/limit-articles/" + 0).then(response => response.json()).then(result => { // load first site when mounted
             articles.value = result // need value to work
         })
     })

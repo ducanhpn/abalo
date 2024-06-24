@@ -46,6 +46,7 @@ class ArticleController extends Controller
         else{
             $date = now();
             $count = DB::table('ab_article')->count();
+            
             DB::table('ab_article')->insert(['id' => $count + 1, 'ab_name'=>$name,'ab_price'=>$price, 'ab_description' => $description, 'ab_creator_id' => 1,'ab_createdate'=>$date]);
             //return $this->index($request); // call index function
             return response()->json(['success' => 'Erfolgreich'], 200);
