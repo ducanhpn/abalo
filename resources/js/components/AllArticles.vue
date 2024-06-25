@@ -4,17 +4,14 @@ import ArticleElement from "./ArticleElement.vue";
 
     let amount = document.getElementById('app').dataset.count;
     let offset = parseInt(parseInt(amount) / 5);
-    console.log(offset)
     let articles = ref([])
     let arr = window.srcArr;
-    console.log(arr);
 
     onMounted(()=>{
         fetch("http://localhost:8000/api/limit-articles/" + 0).then(response => response.json()).then(result => { // load first site when mounted
             articles.value = result // need value to work
         })
 
-        fetch("http://localhost:8000/api/get-status").then(r => r.json()).catch(er => console.log(er));
     })
 
 function handleClick(event, i){

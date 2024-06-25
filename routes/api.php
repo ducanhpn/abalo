@@ -15,4 +15,3 @@ Route::apiResource('/articles', ApiController::class)->only(['index', 'show', 's
 
 Route::apiResource('/shoppingcart', ShoppingCartAPIController::class)->only(['index', 'store', 'destroy']);
 Route::apiResource('/limit-articles', LimitArticlesApiController::class)->only(['show']);
-Route::apiResource('/get-status', GetStatusApiController::class)->only(['index']);

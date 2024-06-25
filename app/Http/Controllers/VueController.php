@@ -2,8 +2,9 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Events\ServerStatusChanged;
 
-class TestController extends Controller{
+class VueController extends Controller{
     public function index(Request $request){
 
         $result = DB::table("ab_article")
@@ -22,6 +23,7 @@ class TestController extends Controller{
                 $srcArr[$i] = "/storage/image/" . $i + 1 . ".png";
             }
         }
+        
         return view("indexForVue", ['srcArr' => $srcArr, 'amountArticle' => $count]);
     }
 }

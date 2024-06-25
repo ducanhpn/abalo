@@ -7,10 +7,11 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcastNow;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
-class ServerStatusChanged implements ShouldBroadcast
+class ServerStatusChanged implements ShouldBroadcastNow
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -19,20 +20,17 @@ class ServerStatusChanged implements ShouldBroadcast
      */
     public $status;
 
-    public function __construct()
+    public function __construct($status)
     {
         //
-        $this->status = true;
+        $this->status = $status;
     }
 
 
     public function broadcastOn(): Channel
     {
-        return new Channel('server-status-channel');
+        
+        return new Channel('maintaince_channel');
     }
 
-    public function broadcastWith():array
-    {
-        return ['status' => $this->status];
-    }
 }
