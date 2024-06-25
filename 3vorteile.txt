@@ -1,7 +1,0 @@
-vue plugin
-
-einfach zu konfigurieren
-mit laravel verbinden
-
-verbinden mit einzige Blade
-einfacher View zu strukturieren ( brauche nur eine View )
