@@ -15,6 +15,8 @@ import { onMounted, ref } from 'vue';
             state.value = e.status;
             console.log(state.value);
         })
+
+        
     })
 
 
