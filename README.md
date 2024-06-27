@@ -2,5 +2,5 @@
 
 ## Abalo 
 ### E-Commercial Website
-Project from DBWT2 in FH Aachen
+Laravel 11, PHP 8.3, Vue3 Component
 

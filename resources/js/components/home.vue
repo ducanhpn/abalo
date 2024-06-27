@@ -1,6 +1,8 @@
 <script setup>
     import { ref } from 'vue';
     import axios from 'axios';
+    import { GoogleSignInButton } from 'vue3-google-signin';
+
     let userId = ref(0)
 
     function handleClick(id, e){
@@ -49,6 +51,16 @@
             })
         }
     }
+
+    // handle success event
+    const handleLoginSuccess = (response) => {
+        console.log(response);
+    };
+
+    // handle an error event
+    const handleLoginError = () => {
+        console.error("Login failed");
+    };
 </script>
 
 <template>
@@ -62,4 +74,10 @@
     <button @click="handleDiscount(1, $event)">Discount 1</button>
     <button @click="handleDiscount(2, $event)">Discount 2</button>
     <button @click="handleDiscount(3, $event)">Discount 3</button>
+
+    <GoogleSignInButton
+        @success="handleLoginSuccess"
+        @error="handleLoginError"
+    >
+    </GoogleSignInButton>
 </template>
