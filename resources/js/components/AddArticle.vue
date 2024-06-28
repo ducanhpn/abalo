@@ -60,29 +60,29 @@ watch(
     <h1>Add new Article</h1>
 
     <div class="container">
-        <div class="element">
-            <label for="name">Article's Name</label>
-            <input class="input" type="text" id="name" :value="formObj.ab_name" @input="changeName">
-            <span v-if="nameErr" class="invalid">name can't be empty string</span>
+        <div class="element container__div">
+            <label for="name" class="div__label">Article's Name</label>
+            <input class="div__input" type="text" id="name" :value="formObj.ab_name" @input="changeName">
+            <span v-if="nameErr" class="element__span--invalid">name can't be empty string</span>
         </div>
-        <div class="element">
+        <div class="element container__div ">
             <label for="price">Article's Price</label>
-            <input class="input" type="number" id="price" v-model="formObj.ab_price">
-            <span v-if="priceErr" class="invalid">price must be > 0</span>
+            <input class="div__input" type="number" id="price" v-model="formObj.ab_price">
+            <span v-if="priceErr" class="element__span--invalid">price must be > 0</span>
         </div>
-        <div class="element">
+        <div class="element container__div">
             <label for="description">Description for article</label>
-            <textarea class="input" id="description" v-model="formObj.ab_description"></textarea>
-            <span v-if="desErr" class="invalid">Description can't be empty</span>
+            <textarea class="div__input--description" v-model="formObj.ab_description"></textarea>
+            <span v-if="desErr" class="element__span--invalid">Description can't be empty</span>
         </div>
-        <button v-on:click="handleClick">add new article</button>
+        <button v-on:click="handleClick" >add new article</button>
     </div>
 
 
 
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .container{
     width: 600px;
     height: 400px;
@@ -93,29 +93,36 @@ watch(
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-}
-.element {
-    width: 500px;
-    display:flex;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
+
+    &__div{
+        width: 500px;
+        display:flex;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+        .div__input{
+            width: 60%;
+            height: 25px ;
+            align-self: center;
+            margin-left: auto;
+            &--description{
+                height: 45px;
+                width: 60%;
+                align-self: center;
+                margin-left: auto;
+            }
+        }
+    }
+    
 }
 
-.input{
-    width: 60%;
-    height: 25px ;
-    align-self: center;
-    margin-left: auto;
+.element{
+    &__span--invalid{
+
+        color: red;
+        position:absolute;
+        top:2em;
+    }
 }
 
-#description{
-    height: 45px;
-}
-
-.invalid{
-    color: red;
-    position:absolute;
-    top:2em;
-}
 </style>

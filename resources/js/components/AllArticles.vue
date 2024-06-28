@@ -14,12 +14,13 @@ import ArticleElement from "./ArticleElement.vue";
 
     })
 
-function handleClick(event, i){
-    event.preventDefault();
-    fetch("http://localhost:8000/api/limit-articles/" + (i - 1)).then(response => response.json()).then(result => {
-        articles.value = result // need value to work
-    })
-}
+    //Wenn der Benutzer andere Seite auswählen, muss die entsprechenden Artikeln darstellen.
+    function onPageChanged(event, i){
+        event.preventDefault();
+        fetch("http://localhost:8000/api/limit-articles/" + (i - 1)).then(response => response.json()).then(result => {
+            articles.value = result // need value to work
+        })
+    }
 
 // "/storage/image" + article.id + imgExtension;
 </script>
@@ -33,7 +34,6 @@ function handleClick(event, i){
         <div class="header-element">Description</div>
         <div class="header-element">image</div>
 
-
         <ArticleElement v-for="article in articles"
                         :id="article.id"
                         :ab_name="article['ab_name']"
@@ -42,8 +42,9 @@ function handleClick(event, i){
                         :imgSrc="arr[article.id - 1]"
                         :key="article.id" />
     </div>
+
     <div class="pages--style">
-        <button class="btn--style" v-for="i in offset + 1" v-on:click="handleClick($event, i)">{{i}}</button>
+        <button class="btn--style" v-for="i in offset + 1" v-on:click="onPageChanged($event, i)">{{i}}</button>
     </div>
 
 </template>

@@ -22,8 +22,11 @@ watch(searchTerm, (newSearchTerm) => {
 
 <template>
     
-    <label for="search-bar">Search articles</label>
-    <input type="text" id="search-bar" v-model="searchTerm"/>
+    <div class="container">
+        <label for="search-bar" class="container__label">Search articles</label>
+        <input type="text" id="search-bar" v-model="searchTerm" class="container__input"/>
+    </div>
+    
     <div :key="renderKey" v-if="searchTerm.length >=3" >
         <table>
             <tr>
@@ -38,5 +41,26 @@ watch(searchTerm, (newSearchTerm) => {
         </table>
     </div>
 </template>
+
+<style lang="scss" scope>
+@use 'sass:math';
+.container{
+    width: 900px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &__label{
+        font-weight: bold;
+        font-size: 1.5rem;
+        margin-left: math.random(10) * 30px ;
+    }
+    &__input{
+        height: 2em;
+        width: math.random(10) * 80px;
+        height: 60px;
+    }
+}
+</style>
 
 

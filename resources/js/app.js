@@ -11,8 +11,7 @@ import GoogleSignInPlugin from "vue3-google-signin"
 const amount = document.getElementById('app').dataset.count
 const app = createApp(App,{count: amount});
 
-
 app
-    .use(GoogleSignInPlugin, {clientId: '272153221507-0tgkb5tqc3g8lpc10jgbd5rf5ij4upl5.apps.googleusercontent.com',})
+    .use(GoogleSignInPlugin, {clientId: import.meta.env.VITE_CLIENT_ID,})
     .use(router)
     .mount('#app');

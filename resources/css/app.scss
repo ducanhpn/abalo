@@ -1,4 +1,5 @@
 $background-color: #EBF4F6;
+$border-color: rgba(7, 25, 82, 0.6);
 html,body{
     margin: 0;
     padding: 0;
@@ -9,7 +10,7 @@ body{
 
 @mixin btn-link(){
     text-decoration: none;
-    color: black;
+    color: rgb(26, 17, 29);
 }
 
 @mixin btn-hover(){
@@ -17,4 +18,19 @@ body{
     color: rgb(7, 25, 82);
 }
 
+@mixin style-link-interactive($class){
+    #{$class}{
+        margin: 0 8px;
+        font-size: 1.5em;
+    }
+    #{$class}:link{
+        @include btn-link();
+    }
+    #{$class}:hover{
+        @include btn-hover();
+    }
+    #{$class}:visited{
+        @include btn-link();
+    }
+}
 
