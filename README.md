@@ -9,3 +9,5 @@ Kommentar
 Nachrichten zwischen Verkäufer und Käufer
 Newsletter
 
+next step
+apply redis
