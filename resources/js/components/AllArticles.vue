@@ -59,6 +59,7 @@ import ArticleElement from "./ArticleElement.vue";
     align-items: center;
     gap: 4px;
     width: 80vw;
+    height: 70vh;
     margin: 1rem auto;
     background: rgba(8, 131, 149, 0.2);
     opacity: 0.8;

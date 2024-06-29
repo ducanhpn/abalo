@@ -8,6 +8,7 @@ import SiteHeader from './components/SiteHeader.vue';
     defineProps(['count'])
 
     let state = ref("production");
+    let toggleCart = ref(false);
 
     onMounted(()=>{
 
@@ -35,8 +36,9 @@ import SiteHeader from './components/SiteHeader.vue';
 
     
     <div v-else class="template__div--serveron div">
+        <button class="button--toggleCart" @click="()=>toggleCart = !toggleCart">shoppingCart</button>
         <SiteHeader />
-        <SiteMain />
+        <SiteMain :isDisplayed="toggleCart"/>
         <SiteFooter />
         
     </div>

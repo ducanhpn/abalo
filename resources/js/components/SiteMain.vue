@@ -1,11 +1,15 @@
 <script setup>
+    import ShoppingCart from './ShoppingCart.vue';
+
+    defineProps({'isDisplayed':Boolean})
 
 </script>
 
 <template>
     
     <main class="div__main">
-         <RouterView />
+        <ShoppingCart :isDisplayed="isDisplayed"/>
+        <RouterView />
     </main>
 
 </template>
